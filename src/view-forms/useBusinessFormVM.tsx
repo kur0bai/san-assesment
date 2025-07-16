@@ -1,8 +1,10 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useFormStore } from "@/store/useFormStore";
+import { useStepStore } from "@/store/useStepStore";
 import * as Yup from "yup";
-import axios from "axios";
 
 export function useBusinessFormVM() {
+  const setBusiness = useFormStore((state) => state.setBusiness);
+  const nextStep = useStepStore((state) => state.nextStep);
   const initialValues = {
     name: "",
     type: "",
@@ -28,8 +30,12 @@ export function useBusinessFormVM() {
   });
 
   const handleSubmit = (values: any) => {
-    console.log("wdwd", values);
-    alert("HOLAAA");
+    setBusiness({
+      name: values.name,
+      type: values.type,
+      address: values.address,
+    });
+    nextStep();
   };
 
   return {

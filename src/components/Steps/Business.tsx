@@ -106,7 +106,7 @@ export const Business = () => {
                 className="error"
               />
             </div>
-
+            <br />
             <Button title="Continue" />
           </Form>
         }

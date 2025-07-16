@@ -1,18 +1,21 @@
-import Image from "next/image";
+"use client";
 import styles from "./page.module.css";
 import { Stepper } from "@/components/Stepper";
 import steps from "@/constants/steps";
 import { Header } from "@/components/Layout/Header";
 import { Business } from "@/components/Steps/Business";
+import { useStepStore } from "@/store/useStepStore";
 
 export default function Home() {
+  const currentStep = useStepStore((state) => state.currentStep);
   return (
     <div className={styles.page}>
       <Header />
       <div className={styles.container}>
-        <Stepper steps={steps} currentStep={2} />
+        <Stepper steps={steps} currentStep={currentStep} />
         <div className={styles.stepContainer}>
-          <Business />
+          {currentStep == 1 && <Business />}
+          {currentStep == 2 && <div>Hola</div>}
         </div>
       </div>
     </div>
