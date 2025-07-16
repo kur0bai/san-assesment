@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./modal.module.css";
 
-enum ModalType {
+export enum ModalType {
   ERROR = "error",
-  SUCCESS = "ok",
+  OK = "ok",
 }
 
 interface ModalProps {
@@ -15,7 +15,7 @@ export const Modal: React.FC<ModalProps> = ({ text, type }) => {
   return (
     <div
       className={`${styles.container} ${
-        type == ModalType.SUCCESS ? styles.success : styles.error
+        type == ModalType.OK ? styles.success : styles.error
       }`}
     >
       <p>{text}</p>

@@ -1,11 +1,18 @@
+import { ModalType } from "@/components/Common/Modal/Modal";
 import { useFormStore } from "@/store/useFormStore";
 import axios from "axios";
 import { useState } from "react";
 
+interface ApiResponse {
+  status: ModalType;
+  message: string;
+}
+
 export function useReviewForm() {
   const { business, contact } = useFormStore();
-  const [apiResponse, setApiResponse] = useState(null);
+  const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
   const handleSubmit = async () => {
+    setApiResponse(null);
     try {
       const API_URL = process.env.NEXT_PUBLIC_API_URL;
       const companyData = {

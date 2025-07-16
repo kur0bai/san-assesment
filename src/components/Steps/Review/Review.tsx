@@ -67,8 +67,10 @@ export const Review = () => {
         </div>
       </div>
       <br />
+      {apiResponse && (
+        <Modal text={apiResponse.message} type={apiResponse.status} />
+      )}
       <Button title="Confirm & Submit" onClick={() => handleSubmit()} />
-      {apiResponse && <Modal text="This is a text" type="error" />}
     </div>
   );
 };

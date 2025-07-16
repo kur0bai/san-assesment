@@ -5,9 +5,11 @@
 }
 
 .success {
-  color: green;
+  color: #008000;
+  background-color: #00800014;
 }
 
 .error {
-  color: red;
+  color: #ef4444;
+  background-color: #ef444414;
 }
