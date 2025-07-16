@@ -3,14 +3,13 @@ import { useStepStore } from "@/store/useStepStore";
 import React, { useEffect } from "react";
 import styles from "./review.module.css";
 import { Button } from "@/components/Layout/Button/Button";
+import { useReviewForm } from "@/view-forms/useReviewFormVM";
+import { Modal } from "@/components/Common/Modal/Modal";
 
 export const Review = () => {
   const { contact, business } = useFormStore();
   const { setStep } = useStepStore();
-  useEffect(() => {
-    console.log("Contact", contact);
-    console.log("Business", business);
-  }, []);
+  const { handleSubmit, apiResponse } = useReviewForm();
 
   return (
     <div className={styles.container}>
@@ -68,7 +67,8 @@ export const Review = () => {
         </div>
       </div>
       <br />
-      <Button title="Confirm & Submit" />
+      <Button title="Confirm & Submit" onClick={() => handleSubmit()} />
+      {apiResponse && <Modal text="This is a text" type="error" />}
     </div>
   );
 };

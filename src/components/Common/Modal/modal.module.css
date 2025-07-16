@@ -1,0 +1,13 @@
+.container {
+  padding: 1rem 2rem;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
