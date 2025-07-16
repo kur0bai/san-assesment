@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
+
+Welcome! this project was developed for Sancrisoft to address specific technical challenges in Word documents.
+It includes a recent version of NextJS.
 
 First, run the development server:
 
 ```bash
+npm install
+#to test
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+And you need to put the API URL enviroment variable in this case is:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_API_URL=https://ss-company.free.beeceptor.com
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 🤓 <br />
+Or you can see the online version on vercel [https://san-assesment.vercel.app/](https://san-assesment.vercel.app/)
 
-## Learn More
+![Image](https://i.imgur.com/VwUBH3M.png)
+![Image](https://i.imgur.com/ZBI0m7m.png)
 
-To learn more about Next.js, take a look at the following resources:
+If you have comments or suggestions, feel free to leave your feedback
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thanks for watching this! 😄

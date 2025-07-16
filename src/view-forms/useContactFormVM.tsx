@@ -30,7 +30,14 @@ export function useContactFormVM() {
       ),
   });
 
-  const handleSubmit = (values: any) => {
+  interface ContactFormValues {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+  }
+
+  const handleSubmit = (values: ContactFormValues) => {
     setContact({
       firstName: values.firstName,
       lastName: values.lastName,
