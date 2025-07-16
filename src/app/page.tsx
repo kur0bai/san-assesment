@@ -6,6 +6,7 @@ import { Header } from "@/components/Layout/Header/Header";
 import { Business } from "@/components/Steps/Business/Business";
 import { useStepStore } from "@/store/useStepStore";
 import { Contact } from "@/components/Steps/Contact/Contact";
+import { Review } from "@/components/Steps/Review/Review";
 
 export default function Home() {
   const currentStep = useStepStore((state) => state.currentStep);
@@ -17,6 +18,7 @@ export default function Home() {
         <div className={styles.stepContainer}>
           {currentStep == 1 && <Business />}
           {currentStep == 2 && <Contact />}
+          {currentStep == 3 && <Review />}
         </div>
       </div>
     </div>

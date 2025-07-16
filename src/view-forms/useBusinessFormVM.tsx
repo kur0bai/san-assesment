@@ -3,12 +3,18 @@ import { useStepStore } from "@/store/useStepStore";
 import * as Yup from "yup";
 
 export function useBusinessFormVM() {
-  const setBusiness = useFormStore((state) => state.setBusiness);
+  const { setBusiness, business } = useFormStore();
   const nextStep = useStepStore((state) => state.nextStep);
   const initialValues = {
-    name: "",
-    type: "",
-    address: { line1: "", line2: "", city: "", state: "", zip: "" },
+    name: business.name ?? "",
+    type: business.type ?? "",
+    address: {
+      line1: business.address.line1 ?? "",
+      line2: business.address.line2 ?? "",
+      city: business.address.city ?? "",
+      state: business.address.state ?? "",
+      zip: business.address.zip ?? "",
+    },
   };
 
   const validationSchema = Yup.object({

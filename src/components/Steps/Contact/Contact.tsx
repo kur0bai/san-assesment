@@ -8,61 +8,67 @@ import { PhoneSelect } from "@/components/Common/PhoneSelect/PhoneSelect";
 export const Contact = () => {
   const { initialValues, validationSchema, handleSubmit } = useContactFormVM();
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {
-        <Form>
-          <div className="form-group">
-            <label htmlFor="name" className="label">
-              Name
-            </label>
-            <div className={styles.name}>
-              <Field
+    <div className={styles.container}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {
+          <Form>
+            <div className="form-group">
+              <label htmlFor="name" className="label">
+                Name
+              </label>
+              <div className={styles.name}>
+                <Field
+                  name="firstName"
+                  type="text"
+                  className="input"
+                  placeholder="First name"
+                />
+                <Field
+                  name="lastName"
+                  type="text"
+                  className="input"
+                  placeholder="Last name"
+                />
+              </div>
+
+              <ErrorMessage
                 name="firstName"
-                type="text"
-                className="input"
-                placeholder="First name"
+                component="div"
+                className="error"
               />
-              <Field
-                name="lastName"
-                type="text"
-                className="input"
-                placeholder="Last name"
-              />
+              <ErrorMessage name="lastName" component="div" className="error" />
             </div>
 
-            <ErrorMessage name="firstName" component="div" className="error" />
-            <ErrorMessage name="lastName" component="div" className="error" />
-          </div>
+            <div className="form-group">
+              <label htmlFor="type" className="label">
+                Email
+              </label>
+              <Field
+                name="email"
+                type="email"
+                className="input"
+                placeholder="Email"
+              />
+              <ErrorMessage name="email" component="div" className="error" />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="type" className="label">
-              Email
-            </label>
-            <Field
-              name="email"
-              type="email"
-              className="input"
-              placeholder="Email"
-            />
-            <ErrorMessage name="email" component="div" className="error" />
-          </div>
+            <div className="form-group">
+              <label htmlFor="type" className="label">
+                Phone
+              </label>
+              <PhoneSelect name="phone" />
+              <ErrorMessage name="phone" component="div" className="error" />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="type" className="label">
-              Phone
-            </label>
-            <PhoneSelect name="phone" />
-            <ErrorMessage name="phone" component="div" className="error" />
-          </div>
-
-          <br />
-          <Button title="Continue" />
-        </Form>
-      }
-    </Formik>
+            <br />
+            <Button title="Continue" />
+          </Form>
+        }
+      </Formik>
+    </div>
   );
 };

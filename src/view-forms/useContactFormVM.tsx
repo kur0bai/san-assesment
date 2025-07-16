@@ -3,13 +3,13 @@ import { useStepStore } from "@/store/useStepStore";
 import * as Yup from "yup";
 
 export function useContactFormVM() {
-  const setContact = useFormStore((state) => state.setContact);
+  const { setContact, contact } = useFormStore();
   const nextStep = useStepStore((state) => state.nextStep);
   const initialValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
+    firstName: contact.firstName ?? "",
+    lastName: contact.lastName ?? "",
+    email: contact.email ?? "",
+    phone: contact.phone ?? "",
   };
 
   const validationSchema = Yup.object({
