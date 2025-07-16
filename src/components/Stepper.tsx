@@ -18,8 +18,12 @@ export const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
     <div className={styles.container}>
       <div className={styles.stepperContainer}>
         {steps.map((step, index) => {
-          const isActive = step.number === currentStep;
-          const isCompleted = step.number < currentStep;
+          const isCompleted =
+            step.number < currentStep ||
+            (currentStep > steps.length && step.number === steps.length);
+          const isActive =
+            step.number === currentStep ||
+            (currentStep > steps.length && step.number === steps.length);
 
           return (
             <div

@@ -9,7 +9,7 @@ import { Modal } from "@/components/Common/Modal/Modal";
 export const Review = () => {
   const { contact, business } = useFormStore();
   const { setStep } = useStepStore();
-  const { handleSubmit, apiResponse } = useReviewForm();
+  const { handleSubmit, apiResponse, buttonText } = useReviewForm();
 
   return (
     <div className={styles.container}>
@@ -70,7 +70,10 @@ export const Review = () => {
       {apiResponse && (
         <Modal text={apiResponse.message} type={apiResponse.status} />
       )}
-      <Button title="Confirm & Submit" onClick={() => handleSubmit()} />
+      <Button
+        title={buttonText ?? "Confirm & Submit"}
+        onClick={() => handleSubmit()}
+      />
     </div>
   );
 };
