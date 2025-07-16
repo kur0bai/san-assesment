@@ -35,7 +35,19 @@ export function useBusinessFormVM() {
     }),
   });
 
-  const handleSubmit = (values: any) => {
+  interface BusinessFormValues {
+    name: string;
+    type: string;
+    address: {
+      line1: string;
+      line2?: string;
+      city: string;
+      state: string;
+      zip: string;
+    };
+  }
+
+  const handleSubmit = (values: BusinessFormValues) => {
     setBusiness({
       name: values.name,
       type: values.type,
