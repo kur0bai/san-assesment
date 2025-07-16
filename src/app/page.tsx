@@ -5,6 +5,7 @@ import steps from "@/constants/steps";
 import { Header } from "@/components/Layout/Header";
 import { Business } from "@/components/Steps/Business";
 import { useStepStore } from "@/store/useStepStore";
+import { Contact } from "@/components/Steps/Contact";
 
 export default function Home() {
   const currentStep = useStepStore((state) => state.currentStep);
@@ -15,7 +16,7 @@ export default function Home() {
         <Stepper steps={steps} currentStep={currentStep} />
         <div className={styles.stepContainer}>
           {currentStep == 1 && <Business />}
-          {currentStep == 2 && <div>Hola</div>}
+          {currentStep == 2 && <Contact />}
         </div>
       </div>
     </div>
