@@ -35,6 +35,42 @@ a {
   text-decoration: none;
 }
 
+.label {
+  font-size: 16px;
+  color: #404d61;
+  font-weight: bold;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.input {
+  border: 1px solid #eceeeb;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  width: 100%;
+
+  color: #000;
+}
+
+.input::placeholder {
+  color: #c0c0c0;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

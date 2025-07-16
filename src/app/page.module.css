@@ -14,8 +14,13 @@
 .container {
   padding: 0 5rem;
   display: flex;
+  flex-direction: row;
   gap: 2rem;
-  align-items: center;
+  justify-items: center;
+}
+
+.stepContainer {
+  margin: 2rem 0;
 }
 
 @media screen and (max-width: 768px) {
