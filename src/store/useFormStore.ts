@@ -1,7 +1,15 @@
 import { create } from "zustand";
 
+interface IAddress {
+  line1: string;
+  line2?: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+
 type FormData = {
-  business: { name: string; type: string; address: any };
+  business: { name: string; type: string; address: IAddress };
   contact: {
     firstName: string;
     lastName: string;
@@ -14,7 +22,16 @@ type FormData = {
 };
 
 export const useFormStore = create<FormData>((set) => ({
-  business: { name: "", type: "", address: {} },
+  business: {
+    name: "",
+    type: "",
+    address: {
+      line1: "",
+      state: "",
+      city: "",
+      zip: "",
+    },
+  },
   contact: { firstName: "", lastName: "", email: "", phone: "" },
   setBusiness: (data) =>
     set((state) => ({ business: { ...state.business, ...data } })),
@@ -22,7 +39,16 @@ export const useFormStore = create<FormData>((set) => ({
     set((state) => ({ contact: { ...state.contact, ...data } })),
   clearForm: () =>
     set({
-      business: { name: "", type: "", address: {} },
+      business: {
+        name: "",
+        type: "",
+        address: {
+          line1: "",
+          state: "",
+          city: "",
+          zip: "",
+        },
+      },
       contact: { firstName: "", lastName: "", email: "", phone: "" },
     }),
 }));
