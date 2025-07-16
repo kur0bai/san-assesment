@@ -1,0 +1,15 @@
+.container {
+  padding: 1rem 2rem;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.success {
+  color: #008000;
+  background-color: #00800014;
+}
+
+.error {
+  color: #ef4444;
+  background-color: #ef444414;
+}

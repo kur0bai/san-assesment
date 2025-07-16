@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #eceeeb;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.selectContainer {
+  display: flex;
+  align-items: center;
+}
+
+.flag {
+  width: 24;
+  height: 16;
+  margin-right: 8;
+}
+
+.innerInput {
+  background-color: #fff;
+  border: none;
+  color: #000;
+}
+
+.innerInput:focus {
+  border: none;
+  outline: none;
+}

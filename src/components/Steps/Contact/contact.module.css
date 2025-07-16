@@ -1,0 +1,15 @@
+.name {
+  display: flex;
+  gap: 1rem;
+}
+
+.container {
+  min-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: auto;
+    width: 80%;
+  }
+}
