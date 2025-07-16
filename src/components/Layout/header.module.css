@@ -1,0 +1,21 @@
+.container {
+  background: #fff;
+  border-bottom: 1px solid #eceeeb;
+  padding: 2rem 5rem;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+}
