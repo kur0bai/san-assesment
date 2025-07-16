@@ -2,6 +2,8 @@
   background: #fff;
   border-bottom: 1px solid #eceeeb;
   padding: 2rem 5rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .heading {

@@ -1,5 +1,6 @@
 import { ModalType } from "@/components/Common/Modal/Modal";
 import { useFormStore } from "@/store/useFormStore";
+import { RequestType, useRequestStore } from "@/store/useRequestStore";
 import axios from "axios";
 import { useState } from "react";
 
@@ -11,9 +12,11 @@ interface ApiResponse {
 export function useReviewForm() {
   const { business, contact } = useFormStore();
   const [apiResponse, setApiResponse] = useState<ApiResponse | null>(null);
+  const { requestType, setRequestType } = useRequestStore();
   const handleSubmit = async () => {
     setApiResponse(null);
     try {
+      setRequestType(RequestType.PROGRESS);
       const API_URL = process.env.NEXT_PUBLIC_API_URL;
       const companyData = {
         name: business.name,
@@ -22,11 +25,11 @@ export function useReviewForm() {
         contact,
       };
       const response = await axios.post(`${API_URL}/company`, companyData);
-
-      console.log("Response jeje ", response.data);
       setApiResponse(response.data);
+      setRequestType(RequestType.OK);
     } catch (error) {
       console.log("Error ", error);
+      setRequestType(RequestType.ERROR);
     }
   };
 
