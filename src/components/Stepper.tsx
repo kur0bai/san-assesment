@@ -11,7 +11,7 @@ interface StepperProps {
 }
 
 import styles from "./stepper.module.css";
-import CheckIcon from "./icons/CheckIcon";
+import CheckIcon from "./Icons/CheckIcon";
 
 export const Stepper: React.FC<StepperProps> = ({ steps, currentStep }) => {
   return (

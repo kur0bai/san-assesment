@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./contact.module.css";
 import { useContactFormVM } from "@/view-forms/useContactFormVM";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Button } from "../Layout/Button";
+import { Button } from "../../Layout/Button/Button";
+import { PhoneSelect } from "@/components/Common/PhoneSelect/PhoneSelect";
 
 export const Contact = () => {
   const { initialValues, validationSchema, handleSubmit } = useContactFormVM();
@@ -45,9 +46,17 @@ export const Contact = () => {
               name="email"
               type="email"
               className="input"
-              placeholder="email"
+              placeholder="Email"
             />
             <ErrorMessage name="email" component="div" className="error" />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="type" className="label">
+              Phone
+            </label>
+            <PhoneSelect name="phone" />
+            <ErrorMessage name="phone" component="div" className="error" />
           </div>
 
           <br />

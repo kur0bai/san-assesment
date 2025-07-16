@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./button.module.css";
-import ArrowLeftIcon from "../icons/ArrowLeftIcon";
+import ArrowLeftIcon from "../../Icons/ArrowLeftIcon";
 
 enum ButtonType {
   SUBMIT = "submit",

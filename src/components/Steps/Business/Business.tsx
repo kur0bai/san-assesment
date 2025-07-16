@@ -6,7 +6,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useBusinessFormVM } from "@/view-forms/useBusinessFormVM";
 import { COMPANY_TYPES } from "@/constants/company";
 import { STATES } from "@/constants/states";
-import { Button } from "../Layout/Button";
+import { Button } from "../../Layout/Button/Button";
 
 export const Business = () => {
   const { initialValues, validationSchema, handleSubmit } = useBusinessFormVM();

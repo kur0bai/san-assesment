@@ -2,10 +2,10 @@
 import styles from "./page.module.css";
 import { Stepper } from "@/components/Stepper";
 import steps from "@/constants/steps";
-import { Header } from "@/components/Layout/Header";
-import { Business } from "@/components/Steps/Business";
+import { Header } from "@/components/Layout/Header/Header";
+import { Business } from "@/components/Steps/Business/Business";
 import { useStepStore } from "@/store/useStepStore";
-import { Contact } from "@/components/Steps/Contact";
+import { Contact } from "@/components/Steps/Contact/Contact";
 
 export default function Home() {
   const currentStep = useStepStore((state) => state.currentStep);

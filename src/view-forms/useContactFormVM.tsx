@@ -25,8 +25,8 @@ export function useContactFormVM() {
     phone: Yup.string()
       .required("Type is required")
       .matches(
-        /^\(\d{3}\) \d{3}-\d{4}$/,
-        "Phone must be in the format (000) 000-0000"
+        /^\+\d{1,4} \(\d{3}\) \d{3}-\d{4}$/,
+        "Format: +XX (000) 000-0000"
       ),
   });
 
